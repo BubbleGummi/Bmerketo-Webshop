@@ -1,0 +1,85 @@
+.register-form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 200px;
+
+    .form-container {
+        max-width: 90vw;
+        border: 0px solid $color-gray-30;
+
+        @include md {
+            border: 2px solid $color-gray-10;
+            padding: 2rem;
+            margin: 60px auto;
+        }
+
+        @include lg {
+            max-width: 1200px;
+        }
+
+        .title {
+            margin-top: 20px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        form {
+            
+            @include md {
+            display: grid;
+            grid-template-columns: 1fr 1fr;            
+            column-gap: 30px;
+            row-gap: 30px;
+            grid-template-areas:    "firstName lastName"
+                                    "streetName streetName"
+                                    "postalCode city"
+                                    "phoneNumber companyName"
+                                    "email email"
+                                    "password password"
+                                    "confirmPassword confirmPassword"
+                                    "profileImage profileImage"
+                                    "terms terms"
+                                    "button button";}
+
+            .firstName          { grid-area: firstName; }
+            .lastName           { grid-area: lastName; }
+            .streetName         { grid-area: streetName; }
+            .postalCode         { grid-area: postalCode;}
+            .city               { grid-area: city;}
+            .phoneNumber        { grid-area: phoneNumber; }
+            .companyName        { grid-area: companyName; }
+            .email              { grid-area: email; }
+            .password           { grid-area: password; }
+            .confirmPassword    { grid-area: confirmPassword; }
+            .profileImage       { grid-area: profileImage; }
+            .terms              { grid-area: terms; }
+
+            textarea {
+                height: 100px;
+                resize: none;
+            }
+
+            .form-btn{
+                display: flex;
+                justify-content: center;
+                grid-area: button;
+                padding: 20px 10px 40px 10px;
+
+                @include lg {
+                    justify-content: left;
+                    width: 100%;
+                    margin: auto;
+                    padding: 20px 0 40px 0;
+                }
+
+                .form-submit-btn {
+                    width: 100%;
+    
+                    @include lg {
+                        width: auto;
+                    }
+                }
+            }
+        }
+    }
+}

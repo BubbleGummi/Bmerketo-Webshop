@@ -1,0 +1,22 @@
+﻿@{
+    Layout = "/Views/Shared/_BackofficeLayout.cshtml";
+    ViewData["Title"] = "Users";
+    var userService = new UserService(userManager);
+    var users = await userService.GetAllUsersWithRolesAsync();
+}
+
+
+<div class="container">
+
+    <h3 class="mb-5">Merketo users:</h3>
+        @foreach(var user in users)
+        {
+       <div col-6">
+            <p><b>First name:</b> @user.firstName</p>
+            <p><b>Last name:</b> @user.lastName</p>
+            <p><b>Email address:</b> @user.email</p>
+            <p><b>User role:</b> @user.roleName</p>
+            <hr/>   
+        </div>
+        }
+</div>

@@ -1,0 +1,56 @@
+﻿@model ContactMessageViewModel
+@{
+    ViewData["Title"] = "Contact Us";
+}
+
+<section class="contact-form">
+    <div class="container form-container">
+        <h2 class="title">Write something</h2>
+
+        <form method="post" novalidate>
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="Name" class="form-label">Name</label>
+                <input asp-for="Name" type="text" class="form-control" onkeyup="completeNameValidationRequired(event)" autocomplete="off">
+                <small><span class="error validation-error text-danger" asp-validation-for="Name"></span></small>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Email" class="form-label">Email</label>
+                <input asp-for="Email" type="text" class="form-control" onkeyup="emailValidationRequired(event)" autocomplete="off">
+                <small><span class="error validation-error text-danger" asp-validation-for="Email"></span></small>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Phone" class="form-label">Phone</label>
+                <input asp-for="Phone" type="text" class="form-control" autocomplete="off">
+                <small><span class="error" asp-validation-for="Phone"></span></small>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="CompanyName" class="form-label">Company Name</label>
+                <input asp-for="CompanyName" type="text" class="form-control" autocomplete="off">
+                <small><span class="error" asp-validation-for="CompanyName"></span></small>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Message" class="form-label">Message</label>
+                <textarea asp-for="Message" class="form-control textarea" rows="4" cols="20" onkeyup="numberOfCharacters(500)"></textarea>
+                <small><span class="error text-danger" id="errormessage" asp-validation-for="Message"></span></small>
+            </div>
+
+            <div class="form-checkbox-group">
+                <label class="custom-checkbox">
+                    <input type="checkbox" checked="checked">
+                    <span class="checkmark"></span>
+                    Save my name and email in this browser for the next time I comment.
+                </label>
+            </div>
+
+            <div class="form-btn">
+                <button class="theme-button form-submit-btn">Submit</button>
+            </div>
+        </form>
+    </div>
+</section>

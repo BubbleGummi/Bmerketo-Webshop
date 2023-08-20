@@ -1,0 +1,77 @@
+.login-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+
+    @include lg {
+        max-width: 1200px;
+        margin: auto;
+    }
+
+    .form-container {
+        max-width: 90vw;
+        border: 0px solid $color-gray-30;
+
+        @include md {
+            border: 1px solid $color-gray-30;
+            margin: 60px auto;
+        }
+
+        .title {
+            margin-top: 20px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        form {
+
+
+            .email          {max-width: 90%; margin: auto;}
+            .password       {max-width: 90%; margin: auto;}
+            .terms          {max-width: 90%; margin: auto;}
+
+
+            .form-group{
+                position: relative;
+
+                .form-link{
+                    color: $color-theme !important;
+                    font-size: 0.7rem;
+                    position: absolute;
+                    right: 0;
+                    top: 5px;
+                }
+
+
+                textarea {
+                    height: 100px;
+                    resize: none;
+                }                
+            }
+
+
+            .form-btn{
+                display: flex;
+                justify-content: center;
+                grid-area: button;
+                padding: 20px 10px 60px 10px;
+
+                @include lg {
+                    justify-content: left;
+                    width: 90%;
+                    margin: auto;
+                    padding: 20px 0 60px 0;
+                }
+
+                .form-submit-btn {
+                    width: 100%;
+    
+                    @include lg {
+                        width: auto;
+                    }
+                }
+            }
+        }
+    }
+}

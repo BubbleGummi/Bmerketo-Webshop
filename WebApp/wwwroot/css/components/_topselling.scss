@@ -1,0 +1,48 @@
+.topselling{
+    margin: 3rem;
+    text-align: center;
+
+    .topselling-card-section{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-row: auto;
+        gap: 1rem;
+        margin: 1rem auto;
+        margin-top: 1.5rem;
+
+        @include md{
+            grid-template-columns: repeat(3, 1fr);
+            margin-top: 2.5rem;
+        }
+
+        @include lg{
+            grid-template-columns: repeat(6, 1fr);
+        }
+
+        .topselling-card{
+            .card-image-small{
+                max-width: 35vw;
+
+                @include md{
+                    max-width: 25vw;
+                }
+
+                @include lg{
+                    max-width: 15vw !important;
+                }
+
+                @include xl {
+                    max-width: initial;
+                }
+            }
+        }
+    }
+
+    .arrow-btn{
+        border: 2px solid $color-gray-20;
+        border-radius: 5px;
+        color: $color-gray-30;
+        padding: 0.2rem 0.5rem;
+        margin: 1rem;
+    }
+}

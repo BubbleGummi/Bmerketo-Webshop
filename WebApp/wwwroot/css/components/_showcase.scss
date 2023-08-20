@@ -1,0 +1,67 @@
+.banner{
+    background-color: $color-gray-10;
+
+    .showcase{
+        padding: 2rem 1rem;
+        text-align: center;
+        margin-top: 0;
+
+        @include md{
+            display: flex;
+            justify-content: space-around;
+            padding:0 0 2rem 0;
+            align-items: center;
+        }
+
+        @include lg{
+            text-align: left;
+        }
+        
+        .content{
+            flex:2;
+
+            .ingress{
+                font-size: 0.7rem;
+                font-weight: $font-weight-light;
+                color: $color-theme-dark;
+
+                @include lg {                    
+                    font-size: 1rem;                
+                }
+            }
+
+            .title{
+                font-size: 2rem;
+                font-weight: $font-weight-bold;
+                color: $color-theme-dark;  
+
+                @include lg {                    
+                    font-size: 3rem;                
+                }  
+
+                @include xl {                    
+                    font-size: 4rem;                
+                } 
+            }            
+        }
+        .image{
+            display: none;
+
+            @include md{
+                flex: 1;
+                display: initial;
+            }
+
+            .img{            
+                
+                max-width: 40vw;
+
+                @include lg{
+                    max-height: 647px;
+                    max-width: 625px;
+                }
+            }
+        }
+    }
+
+}

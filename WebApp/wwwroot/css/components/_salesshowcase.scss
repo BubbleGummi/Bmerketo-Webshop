@@ -1,0 +1,69 @@
+.sale-banner{    
+
+    background-color: $color-theme-light;
+    margin: 2rem 0;
+    padding: 2rem;
+
+    .sale{
+        height: fit-content;
+        margin-top: 0;
+
+        @include md{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            justify-content: space-between;
+        }
+
+        .sale-product{
+            display: none;
+
+            @include md{
+                display: initial;
+            }
+        }
+
+        .sale-card{            
+            max-width: 75vw;
+            text-align: center;
+            height: 100%;
+            margin: auto;
+            padding: 1.2rem;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            @include md{
+                max-width: 25vw;
+            }
+
+            .ingress{
+                font-size: 0.7rem;
+                font-weight: $font-weight-bold;
+                color: $color-theme;
+            } 
+
+            .sale-title{                
+                font-size: 2rem;
+                font-weight: $font-weight-bold;
+                margin-bottom: 0.7rem;
+            }
+
+            .sale-subtitle{
+                font-size: 1rem;
+                font-weight: $font-weight-bold;
+            }
+
+            .sale-info{                
+                font-size: 0.7rem;
+                margin: 0.5rem 0;
+                font-family: $font-roboto;
+            }
+
+            .discover{                
+                font-size: 0.7rem;
+                font-family: $font-roboto;
+            }
+        }
+    }
+}

@@ -1,0 +1,54 @@
+.bestselling{
+    text-align: center;
+    margin-top: 2rem;
+
+    .categories {
+        display: none;
+        justify-content: center;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        @include lg {
+            display: flex;
+        }
+
+        .category-item {
+            margin-right: 5px;
+            
+            font-size: 1rem;
+            font-weight: $font-weight-light;
+            font-family: $font-roboto;
+
+            & + li::before {
+                content: "/";
+                margin-right: 5px;
+            }
+        }
+    }
+
+    .collection{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        gap: 1rem;
+        margin-top: 2rem;      
+        
+        @include md{
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem 0;
+        }
+
+        .collection-card{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: left;
+        }
+    }
+
+    .show-btn{
+        border: 1px solid $color-theme-dark;
+        margin-top: 2rem;
+    }
+}

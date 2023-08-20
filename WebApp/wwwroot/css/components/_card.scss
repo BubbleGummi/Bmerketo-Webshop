@@ -1,0 +1,57 @@
+.card{
+    max-width: fit-content;
+    border: none;
+    border-radius: 0;
+    margin: auto;
+
+    .card-image-small{
+        height: 40vh;
+        max-width: 40vw;
+        margin: auto;
+
+        @include md{
+            max-width:17vw;
+        }
+
+    }
+
+    .card-image-large{
+        margin: auto;
+        height: 40vh;
+        max-width: 15vw;
+    }
+
+    .card-information{
+        width: 100%;
+        text-align: left;
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-row: auto;
+        padding: 10px;
+
+        .card-title{
+            grid-column: 1/-1;
+            grid-row: 1/ span 2;
+            font-size: 1rem;
+            font-weight: $font-weight-semibold;
+            margin: 0.4rem 0;
+        }
+        .card-price{      
+            grid-column: 1;
+            grid-row: 3;  
+            font-weight: $font-weight-light;  
+            margin-bottom: 0;       
+        }
+        .to-cart{
+            grid-column: 2;
+            grid-row: 3;
+            font-weight: $font-weight-semibold;  
+            text-align: right;
+            transition: color 300ms;
+
+            &:hover{
+                color: $color-theme;
+            }
+        }
+    }
+}

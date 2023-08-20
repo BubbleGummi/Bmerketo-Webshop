@@ -1,0 +1,38 @@
+﻿<header>
+    <div class="container header">
+        <div class="logo">
+            <img src="images/Logo.svg" alt="Logo">
+            <span class="brand-name">bmerketo</span>
+        </div>
+        <nav id="menu" class="menu-links">
+            <a class="link" href="@Url.Action("Index", "Home")">HOME</a>
+            <a class="link" href="@Url.Action("Index", "Products")">PRODUCTS</a>
+            <a class="link" href="@Url.Action("Index", "Contacts")">CONTACT</a>
+
+            @if (signInManager.IsSignedIn(User) && User.IsInRole("admin"))
+            {
+                <a class="link" href="@Url.Action("Index", "Admin")">ADMIN</a>
+            }
+        </nav>
+        <nav class="menu-icons">
+            <a class="link" href="#"><i class="fa-regular fa-search"></i></a>
+
+            @if (signInManager.IsSignedIn(User))
+            {
+                <a class="link me-5" href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+                <a class="link" href="@Url.Action("Index", "Account")">@User.Identity?.Name</a>
+                <a class="link" href="@Url.Action("Logout", "Account")">Logout</a>
+            }
+            else
+            {
+                <a class="link" href="@Url.Action("LogIn", "Account")">Login</a>
+                <a class="link" href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+            }
+        </nav>
+        <div class="toggle">
+            <button class="btn-toggle btn-outline-white" data-option="toggle" data-target="#menu">
+                <i id="icon" class="fa-regular fa-bars"></i>
+            </button>
+        </div>
+    </div>
+</header>

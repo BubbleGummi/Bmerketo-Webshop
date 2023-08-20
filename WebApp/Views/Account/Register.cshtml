@@ -1,0 +1,92 @@
+﻿@model AccountRegisterViewModel
+@{
+    ViewData["Title"] = "Create new account";
+}
+<section class="register-form">
+    <div class="container form-container">
+        <div class="title">@ViewData["Title"]</div>
+        <div asp-validation-summary="ModelOnly" class="text-danger d-flex justify-content-center"></div>
+        <form method="post" novalidate>
+
+            <div class="firstname form-group">
+                <label asp-for="FirstName"></label>
+                <input asp-for="FirstName" onkeyup="firstAndLastNameValidation(event)" autocomplete="off">
+                <span asp-validation-for="FirstName" class="error"></span>
+            </div>
+
+            <div class="lastname form-group">
+                <label asp-for="LastName"></label>
+                <input asp-for="LastName" onkeyup="firstAndLastNameValidation(event)" autocomplete="off">
+                <span asp-validation-for="LastName" class="error"></span>
+            </div>
+
+            <div class="streetname form-group">
+                <label asp-for="StreetName"></label>
+                <input asp-for="StreetName" onkeyup="streetNameValidation(event)" autocomplete="off">
+                <span asp-validation-for="StreetName" class="error"></span>
+            </div>
+
+            <div class="postalcode form-group">
+                <label asp-for="PostalCode"></label>
+                <input asp-for="PostalCode" onkeyup="postalCodeValidation(event)" autocomplete="off">
+                <span asp-validation-for="PostalCode" class="error"></span>
+            </div>
+
+            <div class="city form-group">
+                <label asp-for="City"></label>
+                <input asp-for="City" autocomplete="off">
+                <span asp-validation-for="City" class="error"></span>
+            </div>
+
+            <div class="phonenumber form-group">
+                <label asp-for="PhoneNumber"></label>
+                <input asp-for="PhoneNumber">
+                <span asp-validation-for="PhoneNumber" class="error"></span>
+            </div>
+
+            <div class="companyname form-group">
+                <label asp-for="CompanyName"></label>
+                <input asp-for="CompanyName">
+                <span asp-validation-for="CompanyName" class="error"></span>
+            </div>
+
+            <div class="email form-group">
+                <label asp-for="Email"></label>
+                <input asp-for="Email" onkeyup="emailValidationRequired(event)" autocomplete="off">
+                <span asp-validation-for="Email" class="error"></span>
+            </div>
+
+            <div class="profileimage form-group">
+                <label asp-for="ImageFile"></label>
+                <input asp-for="ImageFile">
+                <span asp-validation-for="ImageFile" class="error"></span>
+            </div>
+
+            <div class="password form-group">
+                <label asp-for="Password"></label>
+                <input asp-for="Password" onkeyup="passwordValidation(event)" autocomplete="off">
+                <span asp-validation-for="Password" class="error"></span>
+            </div>
+
+            <div class="confirmpassword form-group">
+                <label asp-for="ConfirmPassword"></label>
+                <input asp-for="ConfirmPassword" onkeyup="comparePasswords(event)" autocomplete="off">
+                <span asp-validation-for="ConfirmPassword" class="error"></span>
+            </div>
+
+            <div class="terms form-checkbox-group">
+                <label class="custom-checkbox">
+                    <label asp-for="TermsAndConditions"></label>
+                    <input asp-for="TermsAndConditions">
+                    <span class="checkmark"></span>
+                    <small><span asp-validation-for="TermsAndConditions"></span></small>
+                </label>
+            </div>
+            <span asp-validation-for="TermsAndConditions"></span>
+
+            <div class="form-btn">
+                <button class="theme-button form-submit-btn">Register</button>
+            </div>
+        </form>
+    </div>
+</section>

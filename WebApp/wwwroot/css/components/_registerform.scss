@@ -1,0 +1,108 @@
+.register-form {
+    display: flex;
+    justify-content: center;
+
+    .form-container {
+        max-width: 90vw;
+        border: 0px solid $color-gray-30;
+
+        @include md {
+            margin: 60px auto;
+        }
+
+        .title {
+            margin-top: 20px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        form {
+            display: grid;
+            column-gap: 30px;
+            row-gap: 30px;
+            grid-template-columns: 1fr;
+            grid-template-areas: "firstname" "lastname" "streetname" "postalcode" "city" "phonenumber" "company" "email" "password" "confirmpassword" "profileimage" "terms" "button";
+
+            @include lg {
+                grid-template-columns: 1fr 1fr;
+                grid-template-areas: "firstname lastname" "streetname streetname" "postalcode city" "phonenumber company" "email email" "password password" "confirmpassword confirmpassword" "profileimage profileimage" "terms terms" "button";
+            }
+
+            .firstname {
+                grid-area: firstname;
+            }
+
+            .lastname {
+                grid-area: firstname;
+            }
+
+
+            .streetname {
+                grid-area: streetname;
+
+                .postalcode {
+                    grid-area: postalcode
+                }
+
+                .city {
+                    grid-area: city
+                }
+
+                .companyname {
+                    grid-area: companyname
+                }
+
+                .email {
+                    grid-area: email;
+                }
+
+                .password {
+                    grid-area: password;
+                }
+
+                .confirmpassword {
+                    grid-area: confirmpassword;
+                }
+
+                .profileimage {
+                    grid-area: profileimage;
+                }
+
+                .terms {
+                    grid-area: terms;
+                   
+                }
+
+                .message {
+                    grid-area: message;
+                    
+                }
+
+                textarea {
+                    height: 100px;
+                    resize: none;
+                }
+
+                .form-btn {
+                    display: flex;
+                    justify-content: center;
+                    grid-area: button;
+                    padding: 20px 10px 40px 10px;
+
+                    @include lg {
+                        justify-content: left;
+                        width: 90%;
+                        margin: auto;
+                    }
+
+                    .form-submit-btn {
+                        width: 100%;
+
+                        @include lg {
+                            width: auto;
+                        }
+                    }
+                }
+            }
+        }
+    }

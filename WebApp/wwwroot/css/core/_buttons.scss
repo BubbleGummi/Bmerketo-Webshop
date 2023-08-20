@@ -1,0 +1,42 @@
+button {
+    padding: 0.3rem 1rem;
+    background-color: transparent;
+    border: none;
+    font-family: 'Poppins', sans-seif;
+    font-weight: 400;
+    font-size: 0.7rem !important;
+    transition: all 300ms;
+
+    @include md {
+        padding: 0.5rem 1.5rem;
+    }
+
+    @include lg {
+        padding: 0.5rem 2rem;
+    }
+}
+
+.light-button {
+    background-color: white;
+    color: #292929;
+
+    &:hover {
+        color: #FA3150;
+    }
+}
+
+.theme-button {
+    background-color: #FA3150;
+    color: white;
+    text-decoration: none;
+    border: none;
+    font-family: 'Poppins', sans-seif;
+    font-weight: 400;
+    font-size: 0.7rem !important;
+    transition: all 300ms;
+    padding: 0.3rem 1rem;
+
+    &:hover {
+        color: #292929;
+    }
+}

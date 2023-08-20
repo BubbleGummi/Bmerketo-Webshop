@@ -1,0 +1,48 @@
+﻿@model List<ProductModel>
+
+@{
+    var products = await productService.GetAllAsync();
+}
+
+@if (products.Any())
+{
+    <div class="sale-banner">
+        <div class="sale container">
+            <div class="sale-product">
+                <div class="card">
+                    <a asp-controller="Products" asp-action="Details" asp-route-productName="@products.First().ProductName">
+                        <img class="card-image-large" alt="" src="@products.First().ImageUrl">
+                        <div class="card-information">
+                            <h6 class="card-title">@products.First().ProductName</h6>
+                            <p class="card-price">@string.Format("{0:F0}", products.First().Price) :-</p>
+                            <i class="fa-light fa-cart-arrow-down to-cart"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="sale-card">
+                <p class="ingress">UP TO SELL</p>
+                <h4 class="sale-title">50% OFF</h4>
+                <h6 class="sale-subtitle">Get The Best Price</h6>
+                <p class="sale-info">
+                    Get the best daily offer here
+                </p>
+                <p class="discover">Discover More</p>
+            </div>
+
+            <div class="sale-product">
+                <div class="card">
+                    <a asp-controller="Products" asp-action="Details" asp-route-productName="@products.Last().ProductName">
+                        <img class="card-image-large" alt="" src="@products.Last().ImageUrl">
+                        <div class="card-information">
+                            <h6 class="card-title">@products.Last().ProductName</h6>
+                            <p class="card-price">@string.Format("{0:F0}", products.Last().Price):-</p>
+                            <i class="fa-light fa-cart-arrow-down to-cart"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+}

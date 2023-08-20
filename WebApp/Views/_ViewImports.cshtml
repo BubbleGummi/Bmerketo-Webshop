@@ -1,0 +1,11 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using Microsoft.AspNetCore.Identity;
+@using WebApp.Models.ViewModels;
+@using WebApp.Models.Contexts;
+@using WebApp.Models.Entities;
+@using WebApp.Models.Identities;
+@using WebApp.Models.Dtos;
+@using WebApp.Services;
+@inject ProductService productService;
+@inject SignInManager<AppUser> signInManager
+@inject UserManager<AppUser> userManager

@@ -1,0 +1,12 @@
+﻿@{
+    ViewData["Title"] = User.FindFirst("DisplayName")?.Value;
+}
+
+<div class="container">
+    <div class="d-flex flex-column justify-content-center">
+      <h3>Welcome</h3>  
+      <p>@ViewData["Title"]</p>
+    </div>
+    
+
+</div>

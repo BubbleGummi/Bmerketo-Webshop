@@ -1,0 +1,197 @@
+.product-spec{
+    @include lg{
+        display: flex;
+        gap: 2rem;
+        text-align: left;
+    }
+
+    .image-container{
+        flex: 1;
+        margin: auto;
+        max-width: 501px;
+
+        .large-image{
+            max-width: 100%;
+        }
+
+        .small-image-container{
+            margin-top: 10px;
+            display: flex;
+            justify-content: space-between;
+            max-width: 501px;
+
+            .small-image{
+                max-width: 23%;
+            }
+        }
+    }
+
+    .product-specifications{
+        flex: 1;
+        margin: 2rem;
+        text-align: left;
+
+        .product-name{
+            font-size: 1.3rem;
+            font-weight: $font-weight-bold;
+        }
+
+        .product-description{
+            font-family: $font-roboto;
+            margin: 1rem auto;
+        }
+
+        .hr{
+            color: $color-gray-30;
+            width: 100%;
+        }
+
+        .product-form{
+
+            .product-rating{
+                display: flex;
+                justify-content: left;
+                align-items: baseline;
+                color: $color-yellow;
+                margin: 2rem 0;
+
+                @include lg{
+                    justify-content: left;
+                }
+    
+                .start-rating{
+                    .star{                    
+                        margin: auto 5px;
+                    }
+                }
+    
+                .ratings{
+                    margin-left: 2rem;
+                    color: $color-theme-dark;
+                }
+            }
+    
+            .price{
+                font-weight: $font-weight-semibold;
+                font-size: 1.2rem;
+                margin: 0;
+            }
+    
+            .add-amount{    
+                margin: 1rem auto;
+
+                @include md{
+                    display: flex;
+                    width: 100%;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin: 1rem 0;
+                }
+    
+                .counter{
+                    flex: 1;
+                    display: flex;
+                    width: 100%;
+                    justify-content: center;
+                    text-align: center;
+
+                    @include md{                        
+                        justify-content: left;
+                        text-align: center;
+                        height: 100%;
+                    }
+        
+                    .counter-btn{
+                        flex: 1;
+                        text-align: center;
+                        margin-bottom: 1rem;
+                        transition: all 500ms;
+                        border: 1px solid $color-gray-20;
+                        padding: 0.5rem;
+
+                        @include md{
+                            margin: 0;
+                        }
+                    }
+        
+                    .count-amount{
+                        flex: 1;
+                        margin: 0;
+                        padding: 8px;
+                        border: 1px solid $color-gray-20;
+                        height: 100%;
+                        width: 100%;
+
+                        @include md{
+                            text-align: center;
+                        }
+                    }   
+                }
+    
+                .btn-container{
+                    flex: 1;
+
+                    @include md{
+                        display: flex;
+                        justify-content: center;
+                    }
+
+                    @include lg{
+                        margin-left: 1rem;
+                        flex: 2;
+                    }
+                    
+                    .add-cart{
+                        max-width: fit-content;
+                        margin: auto;
+                    }
+                }
+            }
+    
+            .availability{     
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 50%;
+                margin: 2rem 0;
+
+                @include lg{
+                    justify-content: left;
+                    text-align: left;
+                    width: 100%;
+                    margin: 2rem auto;
+                }
+    
+                .circle-color{
+                    text-align: left;
+                    color: $color-yellow;
+                    flex: 1;
+                }
+    
+                .availability-text{
+                    margin: auto;
+                    flex: 1;
+
+                    @include lg{
+                        flex: 5;
+                    }
+                }
+            }
+    
+            .whishlist-btn{  
+                margin: auto;
+                border: 2px solid $color-gray-10;
+            }
+    
+            .product-category{     
+                font-size: 0.7rem;
+                font-weight: $font-weight-light;
+                margin: 1rem 0;
+
+                @include lg{
+                    margin: 2rem auto;
+                }
+            }
+        }        
+    }
+}

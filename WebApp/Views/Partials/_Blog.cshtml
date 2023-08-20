@@ -1,0 +1,33 @@
+﻿@model List<ProductModel>
+
+
+@{
+    var products = await productService.GetByFeaturedCollectionTagAsync();
+}
+
+@if (products.Any())
+{
+
+
+
+<div class="blog container">
+        @foreach (var product in products.Skip(7).Take(3))
+        {
+    <div class="post">
+        <a asp-controller="Products" asp-action="Details" asp-route-productName="@product.ProductName">
+        <img class="post-image" alt="" src="@product.ImageUrl">
+
+        <div class="post-information">
+            <h6 class="post-title">@product.ProductName</h6>
+            <p class="post-preview">
+                @product.ProductDescription
+            </p>
+            <p class="post-author">Post By : Admin</p>
+            <p class="post-comments">comments 13</p>
+        </div>
+        </a>
+    </div>
+           }
+
+</div>
+}

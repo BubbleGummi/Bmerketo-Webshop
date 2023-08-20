@@ -1,0 +1,20 @@
+.related{
+
+    .relatedTitle{
+        text-align: center;
+        margin-top: 2rem;
+        font-size: 1.5rem;
+        font-weight: $font-weight-semibold;
+    }
+
+    .cardcontainer{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+
+        @include md {
+            grid-template-columns: repeat(4, 1fr);
+
+        }
+    }
+}

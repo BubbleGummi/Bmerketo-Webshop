@@ -1,0 +1,61 @@
+.html, body {
+    font-family: $font-poppins;
+    font-weight: $font-weight-regular;
+    font-size: 1rem;
+    color: $color-theme-dark;
+}
+
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 0.7rem;
+
+    @include md {
+        max-width: $breakpoint-md-max-width;
+    }
+    @include lg {
+        max-width: $breakpoint-lg-max-width;
+    }
+    @include xl {
+        max-width: $breakpoint-xl-max-width;
+    }
+    @include xxl {
+        max-width: $breakpoint-xxl-max-width;
+    }
+}
+
+a {
+    text-decoration: none;
+    transition: 300ms;
+    color: $color-theme-dark;
+
+    &:hover{
+        color: $color-theme;
+    }
+}
+
+.hidden-text{
+    display: none;
+
+    @include lg{
+        display: initial;
+    }
+}
+
+.hide{
+    display: none;
+}
+
+.sectiontitle{
+
+    font-size: 1.5rem;
+
+    @include md{
+        font-size: 2rem;
+    }
+
+    @include xl{
+        font-size: 2.5rem;
+        font-weight: $font-weight-semibold;
+    }
+}

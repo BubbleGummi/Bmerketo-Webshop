@@ -1,0 +1,62 @@
+.tabstyle{
+    justify-content: space-around;
+    .nav-item{
+        .nav-link{
+            color: $color-theme-dark;
+            border: none;
+            border-radius: 0;
+        }
+
+        .active{
+            background-color: $color-theme;
+            color: white;
+            border: none;
+            border-radius: 0;
+        }
+    }
+}
+
+.tab-container{
+    text-align:left;
+    padding: auto 1rem;
+    margin-top: 1rem;
+
+    .tab-info{
+        
+        .tabtitle{
+            font-size: 1.2rem;
+            font-weight: $font-weight-semibold;
+        }
+
+        .information{
+
+            @include lg{
+                display: flex;
+            }
+        
+            .tabinformation{
+                margin-top: 1rem;
+                flex: 3;
+                font-size: 1rem;
+                font-family: $font-roboto;
+            }
+
+            .img-container{
+                flex: 2;
+                display: flex;
+                justify-content: center;
+                
+    
+                .tabimage{
+                    max-width: 80%;
+    
+                    @include lg{                    
+                        width: 496px;
+                        height: 356px;
+                        object-fit: contain;
+                    }
+                }
+            }
+        }
+    }
+}

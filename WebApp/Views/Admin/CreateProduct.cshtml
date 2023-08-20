@@ -1,0 +1,86 @@
+﻿@model CreateProductViewModel
+@{
+    Layout = "/Views/Shared/_BackofficeLayout.cshtml";
+    ViewData["Title"]= "Registrera en ny produkt";
+}
+
+
+<div class="d-flex justify-content-center m-5">
+    
+    <form method="post" novalidate>
+        
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+
+        <div class="mb-3">
+            <label asp-for="ProductName" class="form-label"></label>
+            <input asp-for="ProductName" type="text" class="form-control"/>
+            <small><span asp-validation-for="ProductName" class="text-danger"></span></small>
+        </div>
+
+
+        <div class="mb-3">
+            <label asp-for="ArticleNumber" class="form-label"></label>
+            <input asp-for="ArticleNumber" type="text" class="form-control"/>
+            <small><span asp-validation-for="ArticleNumber" class="text-danger"></span></small>
+        </div>
+
+
+        <div class="mb-3">
+            <label asp-for="Price" class="form-label"></label>
+            <input asp-for="Price" type="text" class="form-control" />
+            <small><span asp-validation-for="Price" class="text-danger"></span></small>
+        </div>
+
+
+        <div class="mb-3">
+            <label asp-for="ProductDescription" class="form-label"></label>
+            <textarea asp-for="ProductDescription" class="form-control" rows="4"></textarea>
+            <small><span asp-validation-for="ProductDescription" class="text-danger"></span></small>
+        </div>
+        
+        <div class="container">
+
+            <div class="row">
+                <div class="col-12 mb-3">
+                    <label asp-for="CategoryId" class="form-label"></label>
+                    <select asp-for="CategoryId" class="form-select">
+                        <option value="">Select a category</option>
+                        <option value="1">Bags</option>
+                        <option value="2">Dress</option>
+                        <option value="3">Decoration</option>
+                        <option value="4">Essentials</option>
+                        <option value="5">Interior</option>
+                        <option value="6">Laptop</option>
+                        <option value="7">Mobile</option>
+                        <option value="8">Beauty</option>
+                    </select>
+                    <small><span asp-validation-for="CategoryId" class="text-danger"></span></small>
+                </div>
+            </div>
+            <div class="row">
+                <div class="tag-container">
+                    @foreach (SelectListItem tag in ViewBag.Tags)
+                    {
+                        <div>
+                            <input type="checkbox" name="Tags" id="tag-@tag.Text-@tag.Value" value="@tag.Value" checked="@tag.Selected" class="form-check-input" />
+                            <label for="tag-@tag.Text-@tag.Value" class="form-check-label">@tag.Text</label>
+                        </div>
+
+                    }
+                </div>
+            </div>
+            <div class="col-12 mb-3">
+                <label asp-for="ImageUrl" class="form-label"></label>
+                <input asp-for="ImageUrl" type="text" class="form-control" />
+                <small><span asp-validation-for="ImageUrl" class="text-danger"></span></small>
+            </div>
+
+            <div class="d-grid">
+                <button type="submit" class="theme-button">Skapa produkt</button>
+            </div>
+        </div>
+    </form>
+
+</div>
+  
